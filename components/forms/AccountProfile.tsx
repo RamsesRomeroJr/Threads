@@ -38,12 +38,14 @@ const AccountProfile = ({ user, btnTitle } :
         const form = useForm({
             resolver: zodResolver(UserValidation),
             defaultValues : {
-                profile_photo: '',
-                name: '',
-                username: '',
-                bio: '',
+                profile_photo: user?.image || "",
+                name: user?.name || "",
+                username: user?.username || "",
+                bio: user?.bio || "",
             }
         })
+
+        console.log(user?.image)
 
         const handleImage = (e: ChangeEvent, fieldChange: (value: string) => void ) => {
             e.preventDefault();
