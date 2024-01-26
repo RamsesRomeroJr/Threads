@@ -31,6 +31,6 @@ const threadSchema = new mongoose.Schema({
 
 //first time models isn't going to exist so it'll fall back on creating mongoose model thread,
 //every time after it will already have a model thread
-const Thread = mongoose.models.Thread || mongoose.model('Thread', threadSchema);
+const Thread = mongoose.models.Thread || mongoose.model("Thread", threadSchema);
 
 export default Thread;
