@@ -1,109 +1,108 @@
-"use client"
+"use client";
 
+import * as z from "zod";
+import Image from "next/image";
 import { useForm } from "react-hook-form";
-import { Button } from "@/components/ui/button"
+import { usePathname, useRouter } from "next/navigation";
+import { ChangeEvent, useState } from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
+
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { zodResolver } from "@hookform/resolvers/zod";
-import { UserValidation } from "@/lib/validations/user";
-import * as z from "zod"
-import Image from "next/image";
-import { ChangeEvent, useState } from "react";
-import { isBase64Image } from "@/lib/utils";
-import { useUploadThing } from '@/lib/uploadthing'
-import { updateUser } from "@/lib/actions/user.actions";
-import { usePathname, useRouter } from "next/navigation";
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
 
+import { useUploadThing } from "@/lib/uploadthing";
+import { isBase64Image } from "@/lib/utils";
+
+import { UserValidation } from "@/lib/validations/user";
+import { updateUser } from "@/lib/actions/user.actions";
 
 interface Props {
-    user: {
-        id: string;
-        objectId: string;
-        username: string;
-        name: string;
-        bio: string;
-        image: string;
-    };
-    btnTitle: string;
+  user: {
+    id: string;
+    objectId: string;
+    username: string;
+    name: string;
+    bio: string;
+    image: string;
+  };
+  btnTitle: string;
 }
 
-const AccountProfile = ({ user, btnTitle } : Props) => {
-    const [files, setFiles] = useState<File[]>([]);
-    const { startUpload } = useUploadThing("media");
-    const router = useRouter();
-    const pathname = usePathname();
+const AccountProfile = ({ user, btnTitle }: Props) => {
+  const router = useRouter();
+  const pathname = usePathname();
+  const { startUpload } = useUploadThing("media");
 
-        const form = useForm({
-            resolver: zodResolver(UserValidation),
-            defaultValues : {
-                profile_photo: user?.image || "",
-                name: user?.name || "",
-                username: user?.username || "",
-                bio: user?.bio || "",
-            }
-        })
+  const [files, setFiles] = useState<File[]>([]);
 
-        console.log(user?.image)
+  const form = useForm<z.infer<typeof UserValidation>>({
+    resolver: zodResolver(UserValidation),
+    defaultValues: {
+      profile_photo: user?.image ? user.image : "",
+      name: user?.name ? user.name : "",
+      username: user?.username ? user.username : "",
+      bio: user?.bio ? user.bio : "",
+    },
+  });
 
-        const handleImage = (e: ChangeEvent<HTMLInputElement>, fieldChange: (value: string) => void ) => {
-            e.preventDefault();
+  const onSubmit = async (values: z.infer<typeof UserValidation>) => {
+    const blob = values.profile_photo;
 
-            const fileReader = new FileReader();
+    const hasImageChanged = isBase64Image(blob);
+    if (hasImageChanged) {
+        const imgRes = await startUpload(files);
+        if (imgRes && imgRes[0].url) {
+        values.profile_photo = imgRes[0].url;
+      }
+    }
 
-            if(e.target.files && e.target.files.length > 0) {
-                const file = e.target.files[0];
-                setFiles(Array.from(e.target.files));
+    await updateUser({
+      name: values.name,
+      path: pathname,
+      username: values.username,
+      userId: user.id,
+      bio: values.bio,
+      image: values.profile_photo,
+    });
 
-                if(!file.type.includes('image')) return;
+    if (pathname === "/profile/edit") {
+      router.back();
+    } else {
+      router.push("/");
+    }
+  };
 
-                fileReader.onload = async (event) => {
-                    const imageDataUrl = event.target?.result?.toString() || '';
+  const handleImage = (
+    e: ChangeEvent<HTMLInputElement>,
+    fieldChange: (value: string) => void
+  ) => {
+    e.preventDefault();
 
-                    fieldChange(imageDataUrl)
-                }
+    const fileReader = new FileReader();
 
-                fileReader.readAsDataURL(file)
-            }
-        }
+    if (e.target.files && e.target.files.length > 0) {
+      const file = e.target.files[0];
+      setFiles(Array.from(e.target.files));
 
-        const onSubmit = async (values: z.infer<typeof UserValidation>) => {
-            const blob = values.profile_photo;
+      if (!file.type.includes("image")) return;
 
-            const hasImageChanged = isBase64Image(blob);
+      fileReader.onload = async (event) => {
+        const imageDataUrl = event.target?.result?.toString() || "";
+        fieldChange(imageDataUrl);
+      };
 
-            if(hasImageChanged){
-                const imgRes = await startUpload(files);
-
-                if(imgRes && imgRes[0].url){
-                    values.profile_photo = imgRes[0].url;
-                }
-            }
-
-            await updateUser({
-                userId: user.id,
-                username: values.username,
-                name: values.name,
-                bio: values.bio,
-                image: values.profile_photo,
-                path: pathname
-            })
-
-            if(pathname === '/profile/edit'){
-                router.back();
-            } else {
-                router.push('/')
-            }
-
-          }
+      fileReader.readAsDataURL(file);
+    }
+  };
 
         return (
             <Form {...form}>

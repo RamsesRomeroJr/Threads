@@ -31,9 +31,9 @@ export async function updateUser({
                 name,
                 bio,
                 image,
-                path
+                onboarded: true
             },
-            {upsert: true} //means updating and inserting depending if vlaue exist or not
+            {upsert: true} //means updating and inserting depending if value exist or not
             );
 
             if(path === '/profile/edit'){
@@ -42,5 +42,19 @@ export async function updateUser({
             }
     } catch (error: any) {
         throw new Error(`Failed to create/update user: ${error.message}`)
+    }
+}
+
+export async function fetchUser(userId: string){
+    try {
+        connectToDB();
+
+        return await User.findOne({id: userId})
+        // .populate({
+        //     path: 'communities',
+        //     model: Community
+        // })
+    } catch (error: any) {
+        throw new Error(`Failed to fetch user: ${error.message}`)
     }
 }
