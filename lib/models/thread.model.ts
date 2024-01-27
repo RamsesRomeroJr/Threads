@@ -18,7 +18,7 @@ const threadSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
-    parentID: {
+    parentId: {
         type: String
     },
     children: [
