@@ -16,6 +16,7 @@ const Page = async ({ params }: { params: { id: string }}) => {
 
     const thread = await fetchThreadById(params.id);
 
+
     return (
         <section className="relative">
             <div>
@@ -34,9 +35,26 @@ const Page = async ({ params }: { params: { id: string }}) => {
             <div className="mt-7">
                 <Comment
                     threadId={thread.id}
-                    currentUserImg={user.imageUrl}
+                    currentUserImg={userInfo.image}
                     currentUserId={JSON.stringify(userInfo._id)} //not sure if it'll always be a string or a mongoose object so we do JSON.stringify to make sure it is
                 />
+            </div>
+
+            <div  className="mt-10">
+                {thread.children.map((childItem: any) => (
+                    <ThreadCard
+                    key={childItem._id}
+                    id={childItem._id}
+                    currentUserId={user?.id || ""}
+                    parentId={childItem.parentId}
+                    content={childItem.text}
+                    author={childItem.author}
+                    community={childItem.community}
+                    createdAt={childItem.createdAt}
+                    comments={childItem.children}
+                    isComment
+                />
+                ))}
             </div>
         </section>
     )
