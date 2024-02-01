@@ -92,6 +92,7 @@ This section list major frameworks/libraries used to build this project.
 <!-- ROADMAP -->
 ## Roadmap
 
+### Completed
 - [x] User Authentication with Clerk
 - [x] User Onboarding after sign up
 - [x] Database for recorded threads/communities
@@ -100,6 +101,8 @@ This section list major frameworks/libraries used to build this project.
 - [x] Users Profile Info page
 - [x] Community Info Page
 - [x] Activity Page
+
+### To Do
 - [ ] Added Post date to all threads
 - [ ] Share Functionality
 - [ ] Comments On Thread that shows commenters profile image
@@ -116,9 +119,9 @@ See the [open issues](https://github.com/RamsesRomeroJr/Threads/issues) for a fu
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Ramses Romero JR - [LinkedIn](https://www.linkedin.com/in/ramses-romero-jr/) - ramses.romero.jr@gmail.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/RamsesRomeroJr/Threads](https://github.com/RamsesRomeroJr/Threads)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
