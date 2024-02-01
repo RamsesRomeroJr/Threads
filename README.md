@@ -81,8 +81,26 @@ This section list major frameworks/libraries used to build this project.
 ## Usage
 
 ### Some of the features that you can use with this website
-- Being able to sign-up/login/demo login
-<img src="" />
+- Being able to sign-up/login
+<img src="./public/assets/Threads-Signup.gif" />
+
+- Onboarding
+<img src="./public/assets/Threads-Onboarding.gif" />
+
+- Create Thread Post
+<img src="./public/assets/Threads-CreateThread.gif" />
+
+- Reply To Threads
+<img src="./public/assets/Threads-Reply.gif" />
+
+- See Users Profiles
+<img src="./public/assets/Threads-UserProfile.gif" />
+
+- View Communites
+<img src="./public/assets/Threads-CommunityView.gif" />
+
+- View Recent Activity
+<img src="./public/assets/Threads-ActivityPage.gif" />
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
