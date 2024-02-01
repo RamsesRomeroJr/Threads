@@ -1,36 +1,142 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+<a name="readme-top"></a>
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/RamsesRomeroJr/Threads">
+    <img src="https://raw.githubusercontent.com/RamsesRomeroJr/Threads/81e530e60ba8de6b67474b056a22e0f5e14472d9/public/assets/logo.svg" alt="Logo" width="80" height="80">
+  </a>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+  <h3 align="center">Threads Clone</h3>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+  <p align="center">
+    A threads clone... with extra features
+    <br />
+    <br />
+    <a href="https://clone-of-threads.vercel.app/">View Live</a>
+    ·
+    <a href="https://github.com/RamsesRomeroJr/Threads/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/RamsesRomeroJr/Threads/issues">Request Feature</a>
+  </p>
+</div>
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
+
+
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+Threads Inspired Website.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Built With
+
+This section list major frameworks/libraries used to build this project.
+
+* [![Typescript][Typescript]][Typescript-url]
+* [![React][React.js]][React-url]
+* [![Next][Next.js]][Next-url]
+* [![Mongoose][Mongoose]][Mongoose-url]
+* [![Clerk][Clerk]][Clerk-url]
+* [![Tailwind][Tailwind]][Tailwind-url]
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+### Some of the features that you can use with this website
+- Being able to sign-up/login/demo login
+<img src="" />
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- ROADMAP -->
+## Roadmap
+
+- [x] User Authentication with Clerk
+- [x] User Onboarding after sign up
+- [x] Database for recorded threads/communities
+- [x] Create Thread Functionality
+- [x] Reply Functionality
+- [x] Users Profile Info page
+- [x] Community Info Page
+- [x] Activity Page
+- [ ] Added Post date to all threads
+- [ ] Share Functionality
+- [ ] Comments On Thread that shows commenters profile image
+- [ ] Suggested Communities
+- [ ] Suggested Users
+- [ ] Like Functionality
+- [ ] Search Bar Functionality
+- [ ] Repost Functionality
+
+See the [open issues](https://github.com/RamsesRomeroJr/Threads/issues) for a full list of proposed features (and known issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTACT -->
+## Contact
+
+Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+
+Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[Clerk]: https://img.shields.io/badge/Clerk-000000?style=for-the-badge&logo=clerk&logoColor=b0a5f5
+[Clerk-url]: https://clerk.com/
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/ramses-romero-jr/
+[Mongoose]: https://img.shields.io/badge/Mongoose-000000?style=for-the-badge&logo=mongoose&logoColor=red
+[Mongoose-url]: https://www.mongodb.com/developer/languages/javascript/getting-started-with-mongodb-and-mongoose/
+[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[Next-url]: https://nextjs.org/
+[React.js]: https://img.shields.io/badge/React-000000?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
+[Tailwind]: https://img.shields.io/badge/TailwindCSS-000000?style=for-the-badge&logo=tailwindcss&logoColor=#38BDF8
+[Tailwind-url]: https://tailwindcss.com/
+[Typescript]: https://img.shields.io/badge/Typescript-000000?style=for-the-badge&logo=typescript&logoColor=lightblue
+[Typescript-url]: https://www.typescriptlang.org/
