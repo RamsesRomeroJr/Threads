@@ -119,9 +119,9 @@ This section list major frameworks/libraries used to build this project.
 - [x] Users Profile Info page
 - [x] Community Info Page
 - [x] Activity Page
+- [x] Added Post date to all threads
 
 ### To Do
-- [ ] Added Post date to all threads
 - [ ] Share Functionality
 - [ ] Comments On Thread that shows commenters profile image
 - [ ] Suggested Communities
