@@ -15,7 +15,6 @@ async function Page({ params } : { params: {id: string}}){
 
     const communityDetails = await fetchCommunityDetails(params.id);
 
-
     return (
         <section>
             <ProfileHeader
