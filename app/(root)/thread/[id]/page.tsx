@@ -30,6 +30,7 @@ const Page = async ({ params }: { params: { id: string }}) => {
                 community={thread.community}
                 createdAt={thread.createdAt}
                 comments={thread.children}
+                isFullPage={true}
             />
             </div>
             <div className="mt-7">
