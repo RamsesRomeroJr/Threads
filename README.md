@@ -123,6 +123,7 @@ This section list major frameworks/libraries used to build this project.
 
 ### To Do
 - [ ] Share Functionality
+- [ ] Add minimum and maximum character amount for creating threads
 - [ ] Comments On Thread that shows commenters profile image
 - [ ] Suggested Communities
 - [ ] Suggested Users
