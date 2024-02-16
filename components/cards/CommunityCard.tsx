@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import missingPhoto from "../../public/assets/ClerkMissingOrgImg.png"
 
 import { Button } from "../ui/button";
 
@@ -25,15 +26,20 @@ function CommunityCard({ id, name, username, imgUrl, bio, members }: Props) {
                       fill
                       className='rounded-full object-cover'
                       />
-                  : <></>
+                  : <Image
+                      src={missingPhoto}
+                      alt='community_logo'
+                      fill
+                      className='rounded-full object-cover'
+                      />
         }
         </Link>
 
-        <div>
+        <div style={{overflowX: "hidden"}}>
           <Link href={`/communities/${id}`}>
-            <h4 className='text-base-semibold text-light-1'>{name.slice(0,30)}</h4>
+            <h4 className='text-base-semibold text-light-1'>{name}</h4>
           </Link>
-          <p className='text-small-medium text-gray-1'>@{username.slice(0, 30)}</p>
+          <p className='text-small-medium text-gray-1'>@{username}</p>
         </div>
       </div>
 
