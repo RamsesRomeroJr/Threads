@@ -124,12 +124,15 @@ This section list major frameworks/libraries used to build this project.
 ### To Do
 - [ ] Share Functionality
 - [ ] Add minimum and maximum character amount for creating threads
+- [ ] Fix Clerk Allowing Blanks for org/users/slug
 - [ ] Comments On Thread that shows commenters profile image
+- [ ] Fix full screen threads on mobile devices
 - [ ] Suggested Communities
 - [ ] Suggested Users
 - [ ] Like Functionality
 - [ ] Search Bar Functionality
 - [ ] Repost Functionality
+
 
 See the [open issues](https://github.com/RamsesRomeroJr/Threads/issues) for a full list of proposed features (and known issues).
 

@@ -32,6 +32,7 @@ async function Page(){
                 ) : (
                     <>
                         {result.communities.map((community) => (
+
                             <CommunityCard
                                 key={community.id}
                                 id={community.id}
