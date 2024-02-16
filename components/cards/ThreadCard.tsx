@@ -55,12 +55,12 @@ const ThreadCard = ({
 
                             <div className="thread-card_bar"/>
                         </div>
-                        <div className="flex w-full flex-col">
+                        <div className="flex w-full flex-col" style={ !isFullPage ? {overflow: "hidden"} : {overflowWrap: "break-word"}}>
                             <Link href={`/profile/${author.id}`} className="w-fit">
                                 <h4 className="cursor-pointer text-base-semibold text-light-1">{author.name}</h4>
                             </Link>
                             {(content.length > 100 && !isFullPage) ? <p className="mt-2 text-small-regular text-light-2">{content.slice(0, 99)} ...</p>
-                            : <p className="mt-2 text-small-regular text-light-2">{content.slice(0, 500)}</p>
+                            : <p className="mt-2 text-small-regular text-light-2" style={{width: "90%"}}>{content.slice(0, 500)}</p>
                         }
 
                             <div className={`${isComment && 'mb-10'} mt-5 flex flex-col gap-3`}>
